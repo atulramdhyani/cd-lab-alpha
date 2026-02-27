@@ -1,5 +1,28 @@
 # Writer's Room — Changelog
 
+## v10 — Feb 27, 2026 — Alpha-ready polish
+All 16 items from the pre-launch UX audit, shipped in one batch.
+
+### Bug fixes
+1. **`DarkBtn` and `Head` re-mount fix.** Both were components defined inside render, causing unnecessary re-mounts. Converted to stable inline JSX variables (same fix as v9.1 feedback modal).
+2. **Duplicate THEME comment** removed.
+3. **`newChallenge` now resets `briefOpen` to true** — was missed in v9 when `gen()` and history load were fixed.
+4. **Gate Enter key updated** to target the alpha code field after it was changed to `type="password"`.
+
+### UX improvements
+5. **Gate: Alpha code field is now masked** (`type="password"`) so the code isn't visible on screen.
+6. **Gate: Start button has double-click guard** — disabled after first click.
+7. **Browse: Removed redundant first-time hint** — the hero description already explains the product.
+8. **Browse: Limit-reached state is more constructive** — suggests revisiting past challenges, trying the self-review checklist, or exporting portfolio cards.
+9. **Challenge: Auto-scroll to form** after brief renders so users don't have to scroll past the brief.
+10. **Challenge: "Required copy" renamed to "Write your copy"** — clearer for non-technical users.
+11. **Challenge: Field progress chips hidden until user starts typing** — no more wall of gray "0/45" chips on empty forms.
+12. **Challenge: "Mark Complete" button text clarified** — now says "3 fields left" instead of ambiguous "3 remaining."
+13. **Challenge: Export buttons are side-by-side** — "📸 Portfolio card" and "📋 Copy as text" in one row, saves vertical space.
+14. **Challenge: "Copy as Markdown" renamed to "Copy as text"** — most UX writers don't know what Markdown is.
+15. **Challenge: Scroll to top when loading from history** — was landing mid-page.
+16. **Challenge: Live preview hint fixed** — now says "Start typing — this preview updates live" instead of misleading "↑" arrow.
+
 ## v9.3 — Feb 27, 2026
 ### Changes
 - **Feedback now uses Google Form.** Clicking "Send feedback" copies the feedback text (with user email, page, and date metadata) to clipboard and opens the Google Form in a new tab. User pastes and submits — responses land in a Google Sheet. Replaced the broken `mailto:` and clipboard-only approaches.
