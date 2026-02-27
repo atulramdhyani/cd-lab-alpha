@@ -1054,7 +1054,7 @@ export default function App() {
 
   const DarkBtn = () => <button onClick={toggleDark} title={dark?"Light mode":"Dark mode"} style={{background:"none",border:"none",fontSize:16,cursor:"pointer",padding:4,lineHeight:1}}>{dark?"☀️":"🌙"}</button>;
   const Head = () => <><style>{getCSS()}</style><link href={FONTS} rel="stylesheet" /></>;
-  const FEEDBACK_EMAIL = "your@email.com"; // ← Change this to your email
+  const FEEDBACK_EMAIL = "atulramdhyani.work@gmail.com"; // ← Change this to your email
   const feedbackUI = <>
     <button onClick={()=>{setShowFeedback(true);setFbText("");}} style={{position:"fixed",bottom:20,right:20,zIndex:200,padding:"10px 16px",borderRadius:10,background:T.text,color:T.bg,border:"none",fontSize:13,fontWeight:600,cursor:"pointer",fontFamily:"'Outfit',sans-serif",boxShadow:"0 4px 16px rgba(0,0,0,0.15)",transition:"transform 0.15s"}} onMouseEnter={e=>e.currentTarget.style.transform="scale(1.05)"} onMouseLeave={e=>e.currentTarget.style.transform="scale(1)"}>💬 Feedback</button>
     {showFeedback && <div style={{position:"fixed",inset:0,zIndex:300,display:"flex",alignItems:"center",justifyContent:"center",background:"rgba(0,0,0,0.4)",padding:20}} onClick={e=>{if(e.target===e.currentTarget)setShowFeedback(false)}}>
