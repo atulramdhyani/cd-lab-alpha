@@ -1,9 +1,19 @@
 # Writer's Room — Changelog
 
+## v9.3 — Feb 27, 2026
+### Changes
+- **Feedback now uses Google Form.** Clicking "Send feedback" copies the feedback text (with user email, page, and date metadata) to clipboard and opens the Google Form in a new tab. User pastes and submits — responses land in a Google Sheet. Replaced the broken `mailto:` and clipboard-only approaches.
+- Removed unused `fbSent` state and `FEEDBACK_EMAIL` constant.
+
+## v9.2 — Feb 27, 2026
+### Bug fixes
+- **Fixed: Feedback not reaching the creator.** `mailto:` silently fails when no desktop email client is configured (most web users). Replaced with a 2-step flow: user types feedback → clicks Send → feedback copied to clipboard + confirmation screen shows the creator's email address + "Open email client" convenience button. Feedback always lands on clipboard regardless of mail client.
+- **Added: Feedback confirmation state.** Clear "✓ Feedback copied!" screen with the target email address and next steps (was missing entirely before).
+
 ## v9.1 — Feb 27, 2026
 ### Bug fixes
 - **Fixed: Feedback modal losing focus on each keystroke.** `FeedbackBtn` was defined as a component inside the render body, causing React to unmount/remount it on every state change. Replaced with inline JSX variable (`feedbackUI`) that stays stable across re-renders.
-- **Fixed: Feedback textarea now auto-focuses** when the modal opens.
+- **Added: Feedback textarea auto-focuses** when the modal opens.
 
 ---
 
